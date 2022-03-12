@@ -172,21 +172,21 @@ pre code {
 
 <div id="lets-start-with-three-hats" class="section level2">
 <h2>1 Lets start with three hats</h2>
+<p>We start small with 3 people who randomly take a hat. It can be their own hat or the hat that belongs to one of the other two people. We decide that the variable <span class="math inline">\(Y\)</span> is the number of people who get their own hat, which means that <span class="math inline">\(E[Y]\)</span> is the expected number of people who get their own hat.</p>
 <div id="a-first-approach-get-the-expected-value-the-straightforward-way" class="section level3">
 <h3>A first approach: Get the expected value the straightforward way</h3>
-<p>We start small with 3 people who randomly take a hat. It can be their own hat or the hat that belongs to one of the other two people. We decide that the variable <span class="math inline">\(Y\)</span> is the number of people who get their own hat, which means that <span class="math inline">\(E[Y]\)</span> is the expected number of people who get their own hat.</p>
-<p>Remember that to get the expected value of a variable, you multiply each value that the variable can take, and then you sum all products. Since <span class="math inline">\(Y\)</span> can be 0, 1, 2, or 3, we get that</p>
+<p>To get the expected value of a variable, you multiply each value that the variable can take with the probability that the variable takes that value. Then you add it all together. Since <span class="math inline">\(Y\)</span> can be 0, 1, 2, or 3, we get that</p>
 <p><span class="math inline">\(E[Y] = 3 P(Y=3) + 2P(Y=2) + 1P(Y=1) + 0P(Y=0)\)</span>.</p>
 <p>The last term you may skip, since it will be zero anyway.</p>
-<p>To use the formula we must find the probabilities in the formula above.</p>
-<p>In order for all three to get their own hat you can think like this: The first person must take her hat, and the chance of that is one in three. Then the second person must also find his hat, which is a one-in-two chance since only two people are left with their hats. If both person 1 and person two find their hats the third person also gets her hat, since this is the only hat left. Therefore, we know that</p>
+<p>To use the formula above we must find the probabilities <span class="math inline">\(P(Y=3), P(Y=2), P(Y=1)\)</span>.</p>
+<p>In order for all three to get their own hat (which means that <span class="math inline">\(Y=3\)</span>) you can think like this: The first person must take her own hat, and the chance of that is one in three. Then the second person must also find his hat, which is a one-in-two chance since only two people are left with their hats. If both person 1 and person 2 find their hats the third person also gets her hat, since this is the only hat left. Therefore, we know that</p>
 <p><span class="math inline">\(P(Y = 3)=\cfrac{1}{3} \cdot \cfrac{1}{2}\cdot 1 = \cfrac{1}{6}\)</span></p>
-<p>Next, we note that <span class="math inline">\(P(Y = 2)=0\)</span>. If two people find their hats, the third person will also get their own hat.</p>
+<p>Next, we note that <span class="math inline">\(P(Y = 2)=0\)</span>. If two people find their hats, the third person will also get her own hat.</p>
 <p>The event that only one person gets her hat can happen in three ways:</p>
 <ul>
-<li>Person one gets her hat while the other two take each others hats.</li>
-<li>Person one takes person 2’s hat, person 2 take person 1’s hat and person 3 gets her own hat.</li>
-<li>Person one takes person 1’s hat, person 2 takes his own hat and person 3 gets person 1’s hat.</li>
+<li>Person 1 gets her hat while the other two take each others hats.</li>
+<li>Person 1 takes person 2’s hat, person 2 take person 1’s hat and person 3 gets her own hat.</li>
+<li>Person 1 takes person 3’s hat, person 2 takes his own hat and person 3 gets person 1’s hat.</li>
 </ul>
 <p>Each of these events has a <span class="math inline">\(\cfrac{1}{6}\)</span> chance of happening (check for yourself), so</p>
 <p><span class="math inline">\(P(Y=1)=\cfrac{1}{6}+\cfrac{1}{6}+\cfrac{1}{6} =\cfrac{1}{2}\)</span></p>

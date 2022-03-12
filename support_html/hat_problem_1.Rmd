@@ -9,7 +9,9 @@ output:
 
 ## 1 Lets start with three hats
 
-We start small with 3 people who randomly take a hat. It can be their own hat or the hat that belongs to one of the other two people. We decide that the variable $Y$ is the number of people who get their own hat, which means that $E[Y]$ is the expected number of people who get their own hat.
+We start small with 3 people who put their hats on the floor and randomly take a hat each. They can get their own hat or the hat that belongs to one of the other two people. When a person takes a hat, all hats on the floor are equally probable to be selected.
+
+We decide that the variable $Y$ is the number of people who get their own hat, which means that $E[Y]$ is the expected number of people who get their own hat. The goal of this problem is to calculate $E[Y]$.
 
 ### A first approach: Get the expected value the straightforward way
 
@@ -21,7 +23,7 @@ The last term you may skip, since it will be zero anyway.
 
 To use the formula above we must find the probabilities $P(Y=3), P(Y=2), P(Y=1)$.
 
-In order for all three to get their own hat (which means that $Y=3$) you can think like this: The first person must take her own hat, and the chance of that is one in three. Then the second person must also find his hat, which is a one-in-two chance since only two people are left with their hats. If both person 1 and person 2 find their hats the third person also gets her hat, since this is the only hat left. Therefore, we know that
+In order for all three persons to get their own hat (which means that $Y=3$) you can think like this: The first person must take her own hat, and the chance of that is one in three. Then the second person must also find his hat, which is a one-in-two chance since only two people are left with their hats. If both person 1 and person 2 find get their own hats, then the third person also gets her hat, since this is the only hat left. Therefore, we know that
 
 $P(Y = 3)=\cfrac{1}{3} \cdot \cfrac{1}{2}\cdot 1 = \cfrac{1}{6}$
 
@@ -29,7 +31,7 @@ Next, we note that $P(Y = 2)=0$. If two people find their hats, the third person
 
 The event that only one person gets her hat can happen in three ways:
 
-* Person 1 gets her hat while the other two take each others hats.
+* Person 1 gets her hat while the other two take each other's hats.
 * Person 1 takes person 2's hat, person 2 take person 1's hat and person 3 gets her own hat.
 * Person 1 takes person 3's hat, person 2 takes his own hat and person 3 gets person 1's hat.
 
@@ -37,7 +39,7 @@ Each of these events has a $\cfrac{1}{6}$ chance of happening (check for yoursel
 
 $P(Y=1)=\cfrac{1}{6}+\cfrac{1}{6}+\cfrac{1}{6} =\cfrac{1}{2}$
 
-We ignore, $P(Y=0)$, since it will be multiplied with zero and disappear.
+We ignore, $P(Y=0)$, since it will be multiplied with zero in the formula and disappear.
 
 Now, back our formula.
 
@@ -49,15 +51,15 @@ This was a lot of work with just 3 people, and going through this process with f
 
 ### A better approach: Get the expected value using indicator variables
 
-We still have the same three people with the same problem. We also have our variable $Y$ for the number of people who get their own hat, but we will also introduce the indicator variable $X_1, X_2, X_3$. $X_1=1$ if person 1 gets her own hat and otherwise $X_1=0$ Same for $X_2$ and person 2, etc.
+We still have the same three people with the same problem. We also have our variable $Y$ for the number of people who get their own hat, but we will also introduce the indicator variables $X_1, X_2, X_3$. $X_1=1$ if person 1 gets her own hat and otherwise $X_1=0$. Same for $X_2$ and person 2, etc.
 
 $Y = X_1+X_2+X_3 = \sum_{i=1}^3X_i$
 
-What's the point of this, then? The point is that when we calculate $E[Y]$, we can write it as $E[Y]=E[X_1+X_2+X_3]$. This is useful because the expected value of a sum is the sum of the expected values, so
+What's the point of these indicator variables, then? The point is that when we calculate $E[Y]$, we can write it as $E[Y]=E[X_1+X_2+X_3]$. This is useful because the expected value of a sum is the sum of the expected values, so
 
 $E[Y]=E[X_1+X_2+X_3] = E[X_1]+E[X_2]+E[X_3]$
  
-We just turned the bigger problem into three smaller problems.
+We just turned the bigger problem into three smaller problems of finding $E[X_1], E[X_2], E[X_3]$.
 
 $E[X_1]$ is easy to calculate. $X_1=1$ is 1 if person 1 gets her hat and otherwise 0. The probability $P(X_1=1)=\cfrac{1}{3}$ since it is a simple random choice between three hats. Therefore $P(X_1=0)=1-\cfrac{1}{3}=\cfrac{2}{3}$, which gives that
 
@@ -65,15 +67,15 @@ $E[X_1]=1 \cdot \cfrac{1}{3} + 0 \cdot \cfrac{2}{3} = \cfrac{1}{3}$
 
 Note that $E[X_1]=P(X_1=1)$. In fact, this is always the case for indicator variables.
 
-$E[X_2]$ is a bit trickier, but we can manage that too. Person 2 gets his hat if first person 1 does not take person 2's hat (probability 2/3) and then person 2 takes his hat (probability 1/2), so the total probability of this happening is $P(X_2=1)=\cfrac{2}{3}\cfrac{1}{2}=\cfrac{1}{3}$.
+$E[X_2]$ is a bit trickier, but we can manage that too. Person 2 gets his hat if first person 1 does not take person 2's hat (probability 2/3) and then person 2 takes his hat (probability 1/2), so the probability of this sequence of events is $P(X_2=1)=\cfrac{2}{3} \cdot \cfrac{1}{2}=\cfrac{1}{3}$.
 
-Recalling what we just said about the expected value of the indicator variable being the probability that the variable equals 1, we get that.
+Recalling what we just said about the expected value of the indicator variable being the probability that the variable equals 1, we get that
 
 $E[X_2]=P(X_2=1)=\cfrac{1}{3}$
 
-Finally, person 3 gets her hat if the first two people did not get her hat and then she gets her own hat. The first two people have a 2/3 probability of taking person 3's hat, so the probability that they leave it for her is 1/3, so $P(X_3=1)=\cfrac{1}{3}$ and
+Finally, person 3 gets her hat if the first two people did not get person 3's hat. The first two people have a 2/3 probability of taking person 3's hat, so the probability that they leave it for her is 1/3, so $P(X_3=1)=\cfrac{1}{3}$ and
 
-$E[X_2]=P(X_3=1)=\cfrac{1}{3}$
+$E[X_3]=P(X_3=1)=\cfrac{1}{3}$
 
 That's it. Now we see that
 
@@ -99,13 +101,13 @@ With the same reasoning, person 3 gets her hat with probability
 
 $\cfrac{N-2}{N} \cdot \cfrac{1}{N-2}=\cfrac{1}{N}$
 
-You probability see the pattern here. Each person, regardless of how many people take a hat before them gets their own hat with probability
+You probably see the pattern here. Each person, regardless of how many people take a hat before them, gets their own hat with probability
 
 $\cfrac{N-i+1}{N} \cdot \cfrac{1}{N-i+1}=\cfrac{1}{N}$
 
-Replace $i$ with 1,2, or 3 and you see that you get the formulas above.
+If you want to, you can replace $i$ with 1,2, or 3 and check that you get the formulas above.
 
-For the last person $i=N$, which gives
+For the last person, $i=N$, which gives
 
 $\cfrac{N-N+1}{N} \cdot \cfrac{1}{N-N+1}=\cfrac{1}{N} \cdot \cfrac{1}{1}=\cfrac{1}{N}$
 
@@ -117,6 +119,6 @@ $E[Y]= E[\sum_{i=1}^N X_i] = \sum_{i=1}^N E[X_i] = \sum_{i=1}^N \cfrac{1}{N} = N
 
 And that concludes the task.
 
-On the exam you wouldn't write this much. The last part with $N$ hats would be enough. The examples with three hats are there in an attempt to make the problem easier to understand.
+On the exam you wouldn't write this much. The last part that concerns the general case with $N$ hats would be enough. The examples with three hats are there in an attempt to make the problem easier to understand.
 
 By the way, this is a classical problem called Montmort's problem.
