@@ -1,0 +1,28 @@
+---
+title: "Marginal distributions"
+output:
+  html_document:
+    df_print: paged
+---
+
+The probability distribution of a random variable tells you which values the variable can take, and the probability of each value.
+
+The **marginal** distribution (or the marginal probabilities) of a variable is simply the distribution of that variable without taking other variables into account.
+
+For instance, if we have an event $C$, then we can have a marginal distribution that tells us the probability that $C$ happens along with the probability that $C$ does not happen. The event that $C$ does not happen is written $\overline{C}$.
+
+If the probability that $C$ happens is $P(C)=3/4$, then $P(\overline{C})=1/4$. The probability that something happens plus the probability that it doesn't happen must be 1.
+
+This means that the marginal probabilities are
+
+$\begin{cases}\underline{\text{What can happen}} & \underline{\text{Probability}} \\ C & 3/4 \\ \overline{C} & 1/4 \end{cases}$
+
+Now, say that we also have the event $D$, with the marginal probabilities
+
+$\begin{cases}\underline{\text{What can happen}} & \underline{\text{Probability}} \\ D & 3/8 \\ \overline{D} & 5/8 \end{cases}$
+
+In a contingency table, the marginal distributions for $C$ and $D$ are written in the margins.
+
+$\begin{array}{c|c|c|c} & D & \overline{D} & \\ \hline C & 1/4 & 1/2 & 3/4 \\ \hline \overline{C} & 1/8 & 1/8 & 1/4 \\\hline & 3/8 & 5/8 & 1 \end{array}$
+
+If you look at the four **joint probabilities** inside the box, each row and each column adds up to a marginal probability. For instance, if you look at the first row you see that $1/4+1/2 = 3/4$, and in the first column $1/4+1/8 = 3/8$.
