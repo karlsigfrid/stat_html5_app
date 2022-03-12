@@ -20775,6 +20775,5 @@ cr.getObjectRefTable = function () { return [
 	cr.plugins_.Browser.prototype.acts.GoToURLWindow,
 	cr.plugins_.TextBox.prototype.acts.SetY,
 	cr.plugins_.TextBox.prototype.cnds.CompareText,
-	cr.plugins_.Button.prototype.cnds.CompareInstanceVar,
-	cr.plugins_.Sprite.prototype.cnds.IsVisible
+	cr.plugins_.Button.prototype.cnds.CompareInstanceVar
 ];};
