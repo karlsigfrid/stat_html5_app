@@ -1,0 +1,41 @@
+---
+title: "Draw conclusions from a contingency table"
+output:
+  html_document:
+    df_print: paged
+---
+## All you need is in the table
+
+You have managed to fill out a complete contingency table. Perhaps it looks like this:
+
+$\begin{array}{c|c|c|c} & D & \overline{D} & \\ \hline C & 1/4 & 1/2 & 3/4 \\ \hline \overline{C} & 1/8 & 1/8 & 1/4 \\\hline & 3/8 & 5/8 & 1 \end{array}$
+
+Now you want to use the table to answer some exam question. With the table you can answer a number of different questions. If you understand what each element in the matrix represents, you can easily figure out what you need.
+
+Note that in this step it does not matter whether $C$ and $D$ are disjoint, independent, dependent, etc. One the table is complete, all you need to do is to select the correct elements, and add them together if you select more than one element.
+
+## What is the probability that both C and D happen?
+
+The element in column $D$ and row $C$ (the upper left element) tells you the probability that both $C$ and $D$ happen simultaneously. In this matrix we have that $P(C,D)=1/4$.
+
+## What is the probability that neither C nor D happen?
+
+The element on the second row in the second column $(\overline{C}, \overline{D})$ tells you the probability that neither $C$ nor $D$ occur. In this matrix we have that $P(\overline{C}, \overline{D})=1/8$
+
+## What is the probability that C happens but not D, or vice versa?
+
+In the matrix above, you can see that $P(C, \overline{D})=1/2$ and $P(\overline{C}, D)=1/8$.
+
+## What is the probability that either C or D or both happen?
+
+The probability that C, D or both happen is the union between $C$ and $D$. It includes the events $(C, \overline{D})$, $(\overline{C}, D)$ and $(C,D)$. The probability of this is $P(C, \overline{D})+P(\overline{C}, D)+P(C,D) = 1/2+1/8+1/4=7/8$
+
+An alternative is to calculate it backwards. You know that either $C$ or $D$ happens as long it is not the case that neither $C$ nor $D$ happen, so $P(\text{C or D happen})=1 - P(\overline{C}, \overline{D})=1-1/8=7/8$.
+
+## What is that probability that exactly one of C or D occur but not both?
+
+So, here we want either $C$ to occur but not $D$ $(C, \overline{D})$, or we want $D$ to occur but not $C$ $(\overline{C}, D)$.
+
+Again, we have the probabilities in the table.
+
+$P(C, \overline{D})+P(\overline{C}, D)=1/2+1/8=5/8$ or $0.5+0.125=0.625$.

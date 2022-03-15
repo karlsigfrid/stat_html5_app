@@ -1,0 +1,42 @@
+---
+title: "Joint distributions, disjoint events"
+output:
+  html_document:
+    df_print: paged
+---
+
+## Joint probabilities, what they are
+
+The joint distribution between two variables tells you the probability that the first variable has a certain value while the other variable has a certain value.
+
+For instance, if the probability is 0.4 that $X=1$ while $Y=0$ is 0.4, we can write this as $P(X=1, Y=0)=0.4$. It is also common to write $P(X=1 \cap Y=0)=0.4$, which means the same thing.
+
+Now, say that the following 4 events can happen $C, \overline{C}, D, \overline{D}$ (remember that a line over C means 'not C', and same for D), then we have 4 joint events, each with its own probability:
+
+$\begin{cases}\underline{\text{Joint event}} & \underline{\text{Probability}} \\ C,D & \text{Some probability} \\ C,\overline{D} & \text{Some probability} \\ \overline{C}, D & \text{Some probability} \\ \overline{C}, D & \text{Some probability} \end{cases}$
+
+These are all possible combinations of events, so their probabilities add up to 1.
+
+Next, we organize $C$ and $D$ in a contingency matrix. In this example, we know the marginal probabilities, so we have entered these already. 
+
+$\begin{array}{c|c|c|c} & D & \overline{D} & \\ \hline C &  &  & 1/2 \\ \hline \overline{C} &  &  & 1/2 \\\hline & 3/8 & 5/8 & 1 \end{array}$
+
+The four empty fields is where the joint probabilities go when we figure them out.
+
+## Disjoint events
+
+In this example, the events $C$ and $D$ are **disjoint**. It means that both of them cannot happen. If $C$ happens $D$ cannot happen, and vice versa. Another way to say this is that the probability that both $C$ and $D$ happen is zero.
+
+Knowing that $P(C,D)=0$ helps us on our way to fill out the contingency matrix.
+
+$\begin{array}{c|c|c|c} & D & \overline{D} & \\ \hline C & 0  &  & 1/2 \\ \hline \overline{C} &  &  & 1/2 \\\hline & 3/8 & 5/8 & 1 \end{array}$
+
+Now we can figure out the remaining boxes, since the rows and columns of joint probabilities add up to the marginal probabilities. For instance, if you look at the first row in the following matrix you see that $0+1/2 = 1/2$, and in the first column $0+3/8 = 3/8$.
+
+$\begin{array}{c|c|c|c} & D & \overline{D} & \\ \hline C & 0 & 1/2 & 1/2 \\ \hline \overline{C} & 3/8 &  & 1/2 \\\hline & 3/8 & 5/8 & 1 \end{array}$
+
+Just one more box to go. Hopefully you can figure it out by looking either at the row (3/8 + something = 1/2) or the column (1/2 + something = 5/8). 
+
+*Something* here is 1/8, which completes the matrix.
+
+$\begin{array}{c|c|c|c} & D & \overline{D} & \\ \hline C & 0 & 1/2 & 1/2 \\ \hline \overline{C} & 3/8 & 1/8 & 1/4 \\\hline & 3/8 & 5/8 & 1 \end{array}$
