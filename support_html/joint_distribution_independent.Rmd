@@ -1,0 +1,26 @@
+---
+title: "Joint distributions, independent events"
+output:
+  html_document:
+    df_print: paged
+---
+
+## Independent events
+
+We have organized $C$ and $D$ in a contingency matrix and entered our marginal probabilities.
+
+$\begin{array}{c|c|c|c} & D & \overline{D} & \\ \hline C &  &  & 1/2 \\ \hline \overline{C} &  &  & 1/2 \\\hline & 3/8 & 5/8 & 1 \end{array}$
+
+If we know that $C$ and $D$ are independent, it means that the joint probabilities are the products of the marginal probabilities, so
+
+$\begin{cases} P(C, D)=P(C) \cdot P(D) \\ P(C, \overline{D})=P(C) \cdot P(\overline{D}) \\ P(\overline{C}, D)=P(\overline{C}) \cdot P(D) \\ P(\overline{C},\overline{D})=P(\overline{C}) \cdot P(\overline{D}) \end{cases}$
+
+In the matrix above, it means that
+
+$\begin{cases} P(C, D)=\cfrac{1}{2} \cdot \cfrac{3}{8}=\cfrac{3}{16} \\ P(C, \overline{D})=\cfrac{1}{2} \cdot \cfrac{5}{8}=\cfrac{5}{16} \\ P(\overline{C}, D)=\cfrac{1}{2} \cdot \cfrac{3}{8}=\cfrac{3}{16} \\ P(\overline{C},\overline{D})=\cfrac{1}{2} \cdot \cfrac{5}{8}= \cfrac{5}{16} \end{cases}$
+
+Note that they add to 1. That should be the case when you add the probabilities of all possible joint events.
+
+We enter the probabilities into the matrix.
+
+$\begin{array}{c|c|c|c} & D & \overline{D} & \\ \hline C &  3/16 & 5/16 & 1/2 \\ \hline \overline{C} & 3/16  & 5/16  & 1/2 \\\hline & 3/8 & 5/8 & 1 \end{array}$

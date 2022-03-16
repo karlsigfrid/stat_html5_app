@@ -1,0 +1,41 @@
+---
+title: "Joint distributions, dependent events"
+output:
+  html_document:
+    df_print: paged
+---
+
+
+## Conditional probabilities
+
+When two events are dependent, we can no longer get the joint probability by simply multiplying the marginal probabilities. Instead we must work with conditional probabilities.
+
+$P(C|D)$ is the probability of the event $C$ given (or 'conditioned on') event $D$ occuring. The idea here is that when C depends on $D$ the probability of $C$ is different depending on $D$ occurs or not.
+
+If you know the conditional probability $P(C|D)$ and also the marginal probability $P(D)$ you can calculate the joint probability of $P(C, D)$ as
+
+$P(C, D)=P(C|D)P(D)$
+
+You can also calculate the same joint probability as $P(C, D)=P(D|C)P(C)$. Which formula you use depends on what information you have.
+
+## Dependent events in the contingency matrix
+
+We have organized $C$ and $D$ in a contingency matrix and entered our marginal probabilities.
+
+$\begin{array}{c|c|c|c} & D & \overline{D} & \\ \hline C &  &  & 1/2 \\ \hline \overline{C} &  &  & 1/2 \\\hline & 3/8 & 5/8 & 1 \end{array}$
+
+We know that $C$ and $D$ are dependent, and lets say that we get the the conditional probability $P(C|D)=2/3$.
+
+Now we can calculate
+
+$P(C, D)=P(C|D)P(D)=\cfrac{2}{3} \cdot \cfrac{3}{8}=\cfrac{1}{4}$
+
+We enter it into the matrix.
+
+$\begin{array}{c|c|c|c} & D & \overline{D} & \\ \hline C & 1/4  &  & 1/2 \\ \hline \overline{C} &  &  & 1/2 \\\hline & 3/8 & 5/8 & 1 \end{array}$
+
+Now, remember that for each row and each column, the sum of the joint probabilities equals the marginal probability. Therefore, you can figure out the remaining three joint probabilities.
+
+$\begin{array}{c|c|c|c} & D & \overline{D} & \\ \hline C & 1/4  & 1/4 & 1/2 \\ \hline \overline{C} & 1/8  & 3/8 & 1/2 \\\hline & 3/8 & 5/8 & 1 \end{array}$
+
+Double check that each row and each column adds up as it should.

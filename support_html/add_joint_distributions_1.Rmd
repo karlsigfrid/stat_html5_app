@@ -3,6 +3,7 @@ title: "Draw conclusions from a contingency table"
 output:
   html_document:
     df_print: paged
+  word_document: default
 ---
 ## All you need is in the table
 
@@ -34,7 +35,7 @@ An alternative is to calculate it backwards. You know that either $C$ or $D$ hap
 
 ## What is that probability that exactly one of C or D occur but not both?
 
-So, here we want either $C$ to occur but not $D$ $(C, \overline{D})$, or we want $D$ to occur but not $C$ $(\overline{C}, D)$.
+So, here we want either $C$ but not $D$ to occur $(C, \overline{D})$, or we want $D$ but not $C$ to occur $(\overline{C}, D)$.
 
 Again, we have the probabilities in the table.
 
