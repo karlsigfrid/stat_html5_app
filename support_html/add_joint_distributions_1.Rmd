@@ -13,7 +13,7 @@ $\begin{array}{c|c|c|c} & D & \overline{D} & \\ \hline C & 1/4 & 1/2 & 3/4 \\ \h
 
 Now you want to use the table to answer some exam question. With the table you can answer a number of different questions. If you understand what each element in the matrix represents, you can easily figure out what you need.
 
-Note that in this step it does not matter whether $C$ and $D$ are disjoint, independent, dependent, etc. One the table is complete, all you need to do is to select the correct elements, and add them together if you select more than one element.
+Note that in this step it does not matter whether $C$ and $D$ are disjoint, independent, dependent, etc. Once the table is complete, all you need to do is to select the correct elements, and add them together if you select more than one element.
 
 ## What is the probability that both C and D happen?
 
