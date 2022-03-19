@@ -1,0 +1,45 @@
+---
+title: "Joint probabilities"
+output:
+  html_document:
+    df_print: paged
+---
+
+
+You have the conditional probabilities and the marginal probabilities that you need. Now your task is to calculate the joint probabilities, and then to use them to find the answer to your problem.
+
+To explain what you need to do, we use an example with farm animals and apples. Here is what we know:
+
+* 70 percent of the animals on a certain farm are sheep, and 30 percent are horses. We say that $A$ is the event that a random farm animal is a sheep and $B$ the event that a random farm animal is a horse. That means $P(A)=0.7$ and $P(B)=0.3$.  
+
+* 20 percent of the sheep like apples, and 80 percent of the horses like apples. We use $Y$ to describe the event that a randomly chosen animal likes apples and can thus express this as $P(Y|A)=0.2$, $P(Y|B)=0.8$.
+
+You goal is to find the probability that a randomly chosen animal likes apples.
+
+### Calculate joint probabilities for dependent variables
+
+The probability that a random animal on the farm likes apples is written $P(Y)$. This can be called the marginal probability that event $Y$ occurs.
+
+The key to calculating $P(Y)$ to understand that the probability that a randomly selected a farm animal  apples is the probability that the selected animal is a sheep that likes apples *plus* the probability that the animal is a horse that likes apples. We write this
+
+$P(Y) = P(Y, A) + P(Y, B)$
+
+$P(Y, A)$ and $P(Y, B)$ are **joint probabilities**. $P(Y, A)$ is the probability that you randomly select a sheep **and** that this sheep likes apples. $P(Y, B)$ is the probability that you randomly select a horse **and** that this horse likes apples.
+
+The formula above is an example of the law of total probability, which states that the probability of an event occurring is the sum the probabilities of all the different ways in which it can occur. In this case, the event $Y$ (the randomly selected animal likes apples) can occur in two ways. One way is that the joint event $Y, A$ occurs (the animal is a sheep and it likes apples) and the other way is that the joint event $Y, B$ (the animal is a horse and it likes apples) occurs.
+
+To use our formula $P(Y) = P(Y, A) + P(Y, B)$, we need to calculate the joint probabilities, which we do as follows:
+
+$P(Y, A) = P(Y|A) \cdot P(A) =0.2 \cdot 0.7=0.14$
+
+$P(Y, B) = P(Y|B) \cdot P(B) =0.8 \cdot 0.3 =0.24$
+
+To make sure you understand the meaning of this, try to explain it yourself in terms of sheep, horses, and animals that like apples.
+
+### The final result
+
+The law of total probability tells us that  
+
+$P(Y) = P(Y, A) + P(Y, B) = 0.14+0.24=0.38$
+
+We conclude that if we select one animal from the farm randomly, where each animal has the same chance of being selected, we have a 38 percent chance of selecting an animal that likes apples. That may be good to know.
