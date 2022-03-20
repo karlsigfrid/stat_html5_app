@@ -1,0 +1,48 @@
+---
+title: "Calculate conditional probabilities"
+output:
+  html_document:
+    df_print: paged
+---
+
+In this task, we need to calculate a conditional probability.
+
+In the example that we use, we know the following:
+
+$P(A)=0.7$
+
+$P(B)=0.3$
+
+$P(Y|A)=0.2$
+
+$P(Y|B)=0.8$
+
+$P(Y, A) = 0.14$
+
+$P(Y, B) = 0.24$
+
+$P(Y)=0.38$
+
+We want to calculate $P(A|Y)$
+
+You may recall that the joint probabilities were calculated with the formula
+
+$P(Y, A) = P(Y|A) \cdot P(A)$
+
+If we divide both sides of the equation with $P(A)$, we get
+
+$\cfrac{P(Y, A)}{P(A)} = P(Y|A)$
+
+So we can calculate a conditional probability by dividing a joint probability with a marginal probability. If we divide $P(Y, A)$ by $P(Y)$ instead of $P(A)$, we get
+
+$\cfrac{P(Y, A)}{P(Y)} = P(A|Y)$,
+
+and that is what we want. With this formula we can calculate 
+
+$P(A|Y) = \cfrac{P(Y, A)}{P(Y)} = \cfrac{0.14}{0.38} \approx 0.368$
+
+One more thing. Since we know that $P(Y, A) = P(Y|A) \cdot P(A)$, we can write
+
+$P(A|Y) = \cfrac{P(Y|A) \cdot P(A)}{P(Y)}$
+
+This is known as **Bayes theorem**.

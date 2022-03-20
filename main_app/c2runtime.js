@@ -20693,15 +20693,15 @@ cr.plugins_.TextBox = function(runtime)
 }());
 cr.getObjectRefTable = function () { return [
 	cr.plugins_.Arr,
-	cr.plugins_.Browser,
 	cr.plugins_.Button,
+	cr.plugins_.Browser,
 	cr.plugins_.Function,
 	cr.plugins_.Keyboard,
 	cr.plugins_.Mouse,
-	cr.plugins_.Spritefont2,
-	cr.plugins_.Text,
 	cr.plugins_.Sprite,
 	cr.plugins_.TextBox,
+	cr.plugins_.Spritefont2,
+	cr.plugins_.Text,
 	cr.system_object.prototype.cnds.OnLayoutStart,
 	cr.plugins_.TextBox.prototype.acts.SetPos,
 	cr.plugins_.TextBox.prototype.exps.X,
