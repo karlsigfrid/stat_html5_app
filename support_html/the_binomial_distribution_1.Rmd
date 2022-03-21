@@ -1,0 +1,41 @@
+---
+title: "The binomial distribution"
+output:
+  html_document:
+    df_print: paged
+  word_document: default
+---
+
+Let's say that we have a sequence of identical events, such as several rolls of a die. The probability of getting a six is each time $1/6$.
+
+Now we are interested in the probability that you get exactly two sixes when rolling the die three times. It does not matter *when* you get the sixes. It may be the first two rolls are sixes and the third roll is something else. It could also be that the first and the last are sixes, and something else comes in between, etc.
+
+If the variable $X$ is the number of times that you roll a six, then we say that $X$ has a **binomial distribution**.
+
+If you roll the die $n$ times and the probability of getting a six has the probability $p$, then the probability of getting $k$ sixes is
+
+$P(X=k)=\cfrac{n!}{(n-k)! k!} \cdot  p^k \cdot (1-p)^{n-k}$,
+
+(If you don't understand immediately, keep reading.)
+
+It can be explained why the probability is calculated like this, but we will ignore that here. The important thing for the moment is that you understand how to use the formula, and *when* to use it.
+
+In our example with rolling a die, we have the following numbers that we can plug into the formula.
+
+$p= 1/6$, since the the probability of getting a six is $1/6$ each roll.
+
+$n=3$, since we are rolling the die three times.
+
+$k=2$, since we are interested in the probability of getting $2$ sixes.
+
+This gives us
+
+$P(X=2)=\cfrac{n!}{(n-k)! k!} \cdot p^k \cdot (1-p)^{n-k} =\cfrac{3!}{(3-2)! \cdot 2!} \cdot (1/6)^2 \cdot (5/6)^{3-2}=3 \cdot (1/36) \cdot (5/6) \approx 0.0694$
+
+We conclude that the probability of getting exactly two sixes when rolling a die three times is about 0.0694.
+
+Remember, you use the binomial distribution when some event (such as rolling a die or playing a set in a tennis match) is repeating and you want to know the probability that a certain outcome (like getting a six or player 1 winning the set) will occur an exact number of times.
+
+If you don't understand the meaning of factorials, such as $7!$, [here is a good explanation](https://www.mathsisfun.com/numbers/factorial.html).
+
+You can dive deeper into the binomial distribution [here](https://www.mathsisfun.com/data/binomial-distribution.html).
