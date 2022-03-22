@@ -1,0 +1,23 @@
+---
+title: "More about sequences of independent events"
+output:
+  html_document:
+    df_print: paged
+  word_document: default
+---
+
+The probability that two independent events $A$ and $B$ happen together is
+
+$P(A, B) = P(A) \cdot P(B)$
+
+This is true even if $A$ is, $B$ or both are very complex events. For instance, say that $A$ is the probability that player A wins two out of the three first sets in a tennis match.
+
+If the sets are independent, and the probability of winning one set is 0.6, then the binomial distribution gives the probability of winning two out of the 3 sets. If $X$ is the number of sets that A wins out of three, then it turns out that
+
+$P(A) = P(X=2) = \cfrac{3!}{(3-2)! \cdot 2!} \cdot (0.6)^2 \cdot (0.4)^{3-2} = 0.432$
+
+Even though it required some calculations to find $P(A)$, and even though it consists of a combination of smaller events, you can still treat it as any other event.
+
+So if $A$ is the event that player A wins two out of the three first sets and $B$ the event that player $A$ wins the fourth set (these two events occurring together means that player A wins the match after exactly 4 sets) can be calculated as
+
+$P(A, B) = P(A) \cdot P(B) =  0.432 \cdot 0.6$
