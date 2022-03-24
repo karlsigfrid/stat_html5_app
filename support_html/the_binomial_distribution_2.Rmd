@@ -1,0 +1,39 @@
+---
+title: "More on the binomial distribution"
+output:
+  html_document:
+    df_print: paged
+  word_document: default
+---
+
+You know the probability that player A wins a match. If we say that this probability is 0.7, and that four matches will be played, then what is the probability that A wins at least two of these four matches?
+
+In other words, what is the probability that player A wins either 2 matches, 3 matches or 4 matches?
+
+We have the binomial distribution for exactly this type of problem.
+
+Let $X$ be the number of matches that A wins, then if you play $n$ matches and the probability of winning each match is $p$, then the probability of winning $k$ matches is
+
+$P(X=k)=\cfrac{n!}{(n-k)! k!} \cdot  p^k \cdot (1-p)^{n-k}$
+
+Let's plug in the numbers. We have established that $n=4$, and $p=0.7$. To get all the probabilities we need we use the formula with $k=2, k=3, k=4$.
+
+$P(X=2)=\cfrac{4!}{(4-2)! 2!} \cdot  0.7^2 \cdot (1-0.7)^{4-2} = 0.2646$
+
+$P(X=3)=\cfrac{4!}{(4-3)! 3!} \cdot  0.7^3 \cdot (1-0.7)^{4-3} =4116$
+
+$P(X=2)=\cfrac{4!}{(4-4)! 4!} \cdot  0.7^4 \cdot (1-0.7)^{4-4} = 0.2401$
+
+The probability of one of these outcomes is
+
+$P(X=2)+P(X=3)+P(X=4)=0.9163$
+
+An alternative solution is to calculate $P(X=0)+P(X=1)$. The solution is then $1 - (P(X=0)+P(X=1))$, since winning at least two matches means that you don't win zero or one match out of the four.
+
+As an exercise, you may calculate $1 - (P(X=0)+P(X=1))$ and make sure that it equals 0.9163.
+
+Note that in the exam question, the probability of winning a match is not exactly 0.7, so you have to calculate that probability yourself.
+
+If you don't understand the meaning of factorials, such as $7!$, [here is a good explanation](https://www.mathsisfun.com/numbers/factorial.html).
+
+You can dive deeper into the binomial distribution [here](https://www.mathsisfun.com/data/binomial-distribution.html).
