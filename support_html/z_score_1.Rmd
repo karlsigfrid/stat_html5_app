@@ -1,0 +1,30 @@
+---
+title: "The normal distribution Z score"
+output:
+  html_document:
+    df_print: paged
+  word_document: default
+---
+
+You have a variable that is normally distributed with some mean and some variance. Lets say that our random variable $X$ is the time takes a car to drive from one traffic light to the next. Let the mean time in seconds be $\mu=120$, and let the variance be $\sigma=5$. Perhaps we know this after observing a large number of cars driving this distance.
+
+We are interested in the probability that it takes a random car more than 125 minutes to drive from one traffic light to  the next.
+
+You may have access to a table ([like this one](https://www.math.arizona.edu/~rsims/ma464/standardnormaltable.pdf)) in which you can find your probability, but to use the table you must first convert your variable $X$ to a standardized $Z$ variable. You do that with the formula
+
+$Z = \cfrac{X - \mu}{\sigma}$
+
+You have all the information you need to do this:
+
+$X=125$, which is the time limit that you are interested in,
+
+$\mu=120$ is the mean, and
+
+$\sigma=5$ is the standard deviation,
+
+so we get
+
+$Z = \cfrac{125 - 120}{5}=1$
+
+
+While the time $X$ is measured in seconds, $Z$ is always measured in **standard deviations**, so what you just found out was that a car that takes 125 seconds to drive the distance uses *1 standard deviation more time* than the average car.

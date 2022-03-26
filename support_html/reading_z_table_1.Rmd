@@ -1,0 +1,46 @@
+---
+title: "From Z-score to probability"
+output:
+  html_document:
+    df_print: paged
+  word_document: default
+---
+
+$X$ is the time is takes in seconds for a random car to go from one traffic light to the next. $X$ follows a normal distribution with mean $\mu=120$ and standard deviation $\sigma=5$. We want to know the probability that a car takes 125 seconds or more to drive this distance, and we have calculated a Z-score, which is
+
+$Z = \cfrac{X - \mu}{\sigma}= \cfrac{125 - 120}{5}=1$
+
+We can illustrate the scenario with a plot
+
+```{r echo=FALSE}
+x <- seq(100, 140, length=100)
+x1 <- x[x < 125]
+x2 <- x[x > 125] 
+y <- dnorm(x=x, mean=120, sd=5)
+y1 <- dnorm(x=x1, mean=120, sd=5)
+y2 <- dnorm(x=x2, mean=120, sd=5)
+y125 <- dnorm(x=125, mean=120, sd=5)
+plot(x=x, y=y, type="l", lwd=2, ylab="Density", xlab="Time in seconds to drive between the traffic lights")
+polygon(x=c(125, 125, x2), y=c(0, y125, y2), col="orange")
+polygon(x=c(100, x1, 125, 125), y=c(0, y1, y125, 0), col="steelblue")
+abline(v=125, lty=2, lwd=2)
+text(x=c(127.5, 127.5), y=c(0.07, 0.065), labels=c("X = 125", "(Z = 1)"))
+```
+
+The total area under the curve is 1 since it is a density function. The blue area represents the probability that a car drives the distance in less than 125 seconds, and the orange area represents the probability that the car drives in more than 125 seconds.
+
+We are interested in the size of the orange area. There is no simple way to calculate it, but since we know that $Z=1$ when $X=125$, we can look it up in a table.
+
+Open [this Z-score table](https://www.math.arizona.edu/~rsims/ma464/standardnormaltable.pdf). To find a probability that corresponds to a Z-score, you need to locate the correct row and number in the table. This is how:
+
+Say that we want the Z-score for $Z=0.82$. First, remove the last digit. This gives you 0.8. Select the **row** that says 0.8. Then you have the 0.02 that you removed. Select the **column** for .02.
+
+If you select the correct row and column, you find the probability 0.79389.
+
+In our car example we want the probability that corresponds to $Z=1$, which we can write $Z=1.00$ to get it with two decimal points. Again, remove the last digit and select the row for 1.0, then select the column for .00. On this row and in this column we find the probability 0.84134.
+
+Above the table is is explained that *"table Values Represent AREA to the LEFT of the Z score."* In other words, the blue area represents the probability 0.84134, and since the total area is 1, the orange area represents the probability
+
+$1-0.84134=0.15866$.
+
+We conclude that the probability of a car driving from one traffic light to the next in 125 seconds or more is about 16 percent. Another way to put is is that around 16 percent of all cars take 125 seconds or more to drive the distance.
