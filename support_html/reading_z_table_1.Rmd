@@ -39,7 +39,7 @@ If you select the correct row and column, you find the probability 0.79389.
 
 In our car example we want the probability that corresponds to $Z=1$, which we can write $Z=1.00$ to get it with two decimal points. Again, remove the last digit and select the row for 1.0, then select the column for .00. On this row and in this column we find the probability 0.84134.
 
-Above the table is is explained that *"table Values Represent AREA to the LEFT of the Z score."* In other words, the blue area represents the probability 0.84134, and since the total area is 1, the orange area represents the probability
+Above the table it is explained that *"table Values Represent AREA to the LEFT of the Z score."* In other words, the blue area represents the probability 0.84134, and since the total area is 1, the orange area represents the probability
 
 $1-0.84134=0.15866$.
 

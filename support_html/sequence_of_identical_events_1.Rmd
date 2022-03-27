@@ -1,0 +1,11 @@
+---
+title: "Sequences of identical events"
+output:
+  html_document:
+    df_print: paged
+  word_document: default
+---
+
+If we toss a fair coin, the probability of "heads" is 50 %, so if $A$ is the event of getting heads is $A$, then $P(A)=0.5$.
+
+The probability of getting three heads in a row is $P(A)^3=0.5^3$. More generally, we can say that the probability of event $A$ repeating $n$ times is $P(A)^n$.
