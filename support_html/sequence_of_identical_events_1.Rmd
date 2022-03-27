@@ -9,3 +9,5 @@ output:
 If we toss a fair coin, the probability of "heads" is 50 %, so if $A$ is the event of getting heads is $A$, then $P(A)=0.5$.
 
 The probability of getting three heads in a row is $P(A)^3=0.5^3$. More generally, we can say that the probability of event $A$ repeating $n$ times is $P(A)^n$.
+
+This assumes that the events are independent, i.e. if you flip a coin repeatedly the result of one flip is not affected by the result of the previous flips.
