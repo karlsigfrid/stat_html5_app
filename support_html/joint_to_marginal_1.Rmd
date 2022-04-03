@@ -1,0 +1,38 @@
+---
+title: "Calculate marginal probabilities from joint probabilities"
+output:
+  html_document:
+    df_print: paged
+---
+
+We have this matrix of joint probabilities. Now we want to calculate the marginal probabilities, which are the sums of the joint probabilities for each row and column.
+
+$\begin{array}{c|c|c|c} & Y=0 & Y=1 & \\ \hline X=0 & 5/28 & 15/21 &  \\ \hline X=1 & 1/4 & 1/3 & \\\hline & & & 1 \end{array}$
+
+For instance, the marginal probability of $Y=0$ is calculated
+
+$P(Y=0)=P(Y=0, X=0)+P(Y=0, X=1)$
+
+This is an example of the **law of total probability**, which says that the probability of an event, in this case the event $Y=0$, is the sum of all joint events in which $Y=0$. In this example there are two such events, which we add:
+
+$P(Y=0)=P(Y=0, X=0)+P(Y=0, X=1)=5/28+1/4=5/28+7/28=12/28$
+
+Next we reduce the fraction to the smallest possible terms ('Vi förkortar uttrycket', in Swedish). Both 12 and 18 can be divided by 4, which gives
+
+$12/28=3/7$.
+
+We cannot reduce it further, so we enter it into our matrix.
+
+$\begin{array}{c|c|c|c} & Y=0 & Y=1 & \\ \hline X=0 & 5/28 & 15/21 & ?  \\ \hline X=1 & 1/4 & 1/3 & ? \\\hline & 3/7 & ? & 1 \end{array}$
+
+We have three more marginal probabilities to calculate. You can repeat the same procedure three more times, but you can also make it easier if you remember that $Y$ can only be 0 or 1. This means that
+
+$P(Y=0)+P(Y=1)=1$, so $P(Y=1)=1-P(Y=0)=1-3/7=4/7$
+
+We update the matrix.
+
+$\begin{array}{c|c|c|c} & Y=0 & Y=1 & \\ \hline X=0 & 5/28 & 15/21 & ?  \\ \hline X=1 & 1/4 & 1/3 & ? \\\hline & 3/7 & 4/7 & 1 \end{array}$
+
+Now only $P(X=0)$ and $P(X=1)$ remain to be calculated.
+
+**Tip:** $P(X=1)$ seem much easier than $P(X=0)$ to calculate, and you know that the two probabilities sum to one.
