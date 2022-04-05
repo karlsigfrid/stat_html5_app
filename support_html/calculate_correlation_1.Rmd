@@ -12,7 +12,7 @@ $corr(X, Y) = \cfrac{cov(X, Y)}{\sigma_x \sigma_y}$,
 
 so to get the correlation you need to calculate the covariance between the variables and also the standard deviation $\sigma$ (the square root of the variance) for each variable.
 
-### Sample correlation or theoretical correlation
+### Sample correlation or theoretical correlation?
 
 The formula to calculate the covariance and the variances depends on what type of information you have. If you have a sample of observations you may use formulas like these:
 
@@ -22,7 +22,7 @@ $Var(X)=\sum_{i=1}^n(x_i-\bar{x})^2$
 
 $Var(Y)=\sum_{i=1}^n(y_i-\bar{y})^2$
 
-However, in this case we don't have observations of $X$ and $Y$. Instead we have their theoretical distributions, which means that we know the probabilities that the variables take certain values. When we know the distribution of the variables, we use these formulas:
+However, in this case we don't have observations of $X$ and $Y$. Instead we have their theoretical distributions, which means that we know the probabilities that the variables take certain values. When we know the distribution of the variables, we use these formulas to calculate the theoretical correlation:
 
 $cov(X, Y)=E[XY] - E[X]E[Y]$
 

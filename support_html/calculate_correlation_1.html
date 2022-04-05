@@ -174,12 +174,12 @@ pre code {
 <p><span class="math inline">\(corr(X, Y) = \cfrac{cov(X, Y)}{\sigma_x \sigma_y}\)</span>,</p>
 <p>so to get the correlation you need to calculate the covariance between the variables and also the standard deviation <span class="math inline">\(\sigma\)</span> (the square root of the variance) for each variable.</p>
 <div id="sample-correlation-or-theoretical-correlation" class="section level3">
-<h3>Sample correlation or theoretical correlation</h3>
+<h3>Sample correlation or theoretical correlation?</h3>
 <p>The formula to calculate the covariance and the variances depends on what type of information you have. If you have a sample of observations you may use formulas like these:</p>
 <p><span class="math inline">\(cov(X, Y)=\sum_{i=1}^n(x_i-\bar{x})(y_i-\bar{y})\)</span></p>
 <p><span class="math inline">\(Var(X)=\sum_{i=1}^n(x_i-\bar{x})^2\)</span></p>
 <p><span class="math inline">\(Var(Y)=\sum_{i=1}^n(y_i-\bar{y})^2\)</span></p>
-<p>However, in this case we don’t have observations of <span class="math inline">\(X\)</span> and <span class="math inline">\(Y\)</span>. Instead we have their theoretical distributions, which means that we know the probabilities that the variables take certain values. When we know the distribution of the variables, we use these formulas:</p>
+<p>However, in this case we don’t have observations of <span class="math inline">\(X\)</span> and <span class="math inline">\(Y\)</span>. Instead we have their theoretical distributions, which means that we know the probabilities that the variables take certain values. When we know the distribution of the variables, we use these formulas to calculate the theoretical correlation:</p>
 <p><span class="math inline">\(cov(X, Y)=E[XY] - E[X]E[Y]\)</span></p>
 <p><span class="math inline">\(Var(X)=E[X^2] - E[X]^2\)</span></p>
 <p><span class="math inline">\(Var(Y)=E[Y^2] - E[Y]^2\)</span></p>
