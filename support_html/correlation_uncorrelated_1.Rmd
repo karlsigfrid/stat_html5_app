@@ -1,0 +1,9 @@
+---
+title: "The correlation of uncorrelated variables"
+output:
+  html_document:
+    df_print: paged
+  word_document: default
+---
+
+If two variables $X$ and $Y$ are uncorrelated, then the correlation between the variables is 0. Don't ever forget that now!

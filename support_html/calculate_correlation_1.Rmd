@@ -1,0 +1,83 @@
+---
+title: "The correlation of uncorrelated variables"
+output:
+  html_document:
+    df_print: paged
+  word_document: default
+---
+
+The formula for the correlation between $X$ and $Y$ is
+
+$corr(X, Y) = \cfrac{cov(X, Y)}{\sigma_x \sigma_y}$,
+
+so to get the correlation you need to calculate the covariance between the variables and also the standard deviation $\sigma$ (the square root of the variance) for each variable.
+
+### Sample correlation or theoretical correlation
+
+The formula to calculate the covariance and the variances depends on what type of information you have. If you have a sample of observations you may use formulas like these:
+
+$cov(X, Y)=\sum_{i=1}^n(x_i-\bar{x})(y_i-\bar{y})$
+
+$Var(X)=\sum_{i=1}^n(x_i-\bar{x})^2$
+
+$Var(Y)=\sum_{i=1}^n(y_i-\bar{y})^2$
+
+However, in this case we don't have observations of $X$ and $Y$. Instead we have their theoretical distributions, which means that we know the probabilities that the variables take certain values. When we know the distribution of the variables, we use these formulas:
+
+$cov(X, Y)=E[XY] - E[X]E[Y]$
+
+$Var(X)=E[X^2] - E[X]^2$
+
+$Var(Y)=E[Y^2] - E[Y]^2$
+
+### Calculating the expected values
+
+As you can see, to calculate the covariance and the variances, you need to calculate several expected values.
+
+You calculate the expected value of a variable by multiplying each value that the variable can take with the probability of the variable taking that value, and then we sum the products. (You can treat $XY$, $X^2$ and $Y^2$ as variables just like you treat $X$ and $Y$ as variables.)
+
+Here is the matrix in which we find the necessary variable values and probabilities:
+
+$\begin{array}{c|c|c|c} & Y=0 & Y=1 & \\ \hline X=0 & 5/28 & 15/21 & 5/12  \\ \hline X=1 & 1/4 & 1/3 & 7/12 \\\hline & 3/7 & 4/7 & 1 \end{array}$
+
+To calculate $E[X]$ we note that $P(X=0)=5/12$ and $P(X=1)=7/12$. Therefore,
+
+$E[X]=\cfrac{5}{12}\cdot 0 + \cfrac{7}{12}\cdot 1 = \cfrac{7}{12}$
+
+For $Y$ we do the same.
+
+$E[Y]=\cfrac{3}{7}\cdot 0 + \cfrac{4}{7}\cdot 1 = \cfrac{4}{7}$
+
+To get $E[X^2]$ you just replace the values of $X$ with the value of $X^2$ for each probability. In this case where $X$ and $Y$ can only be 0 or 1, we get that $X^2=0$ when $X=0$, and  $X^2=1$ when $X=1$. Same for $Y^2$ and $Y$. Therefore,
+
+$E[X^2]=E[X]= \cfrac{7}{12}$
+
+and
+
+$E[Y^2]=E[Y]= \cfrac{4}{7}$
+
+Note that we have only used the marginal probabilities so far. To calculate $E[XY]$ we will use the joint probabilities.
+
+When you multiply $X \cdot Y$ for each joint outcome, you see that $XY=1$ when both $X$ and $Y$ are 1, otherwise it is zero. Therefore
+
+$E[XY]=\cfrac{5}{28}\cdot 0 + \cfrac{5}{21}\cdot 0+\cfrac{1}{4}\cdot 0 + \cfrac{1}{3}\cdot 1=\cfrac{1}{3}$
+
+### Calculating the covariance and the variances
+
+We have calculated all the expected values that we need, so now we can use our formulas for the covariance and for the variances.
+
+$cov(X, Y)=E[XY] - E[X]E[Y]=\cfrac{1}{3}-\cfrac{7}{12} \cdot \cfrac{4}{7}=\cfrac{1}{3}-\cfrac{4}{12}=\cfrac{1}{3}-\cfrac{1}{3}=0$
+
+$Var(X)=E[X^2] - E[X]^2=\cfrac{7}{12}-(\cfrac{7}{12})^2=\cfrac{35}{144}$
+
+$Var(Y)=E[Y^2] - E[Y]^2=\cfrac{4}{7} - (\cfrac{4}{7})^2=\cfrac{12}{49}$
+
+### Putting it all together
+
+We return to the original formula for the correlation:
+
+$corr(X, Y) = \cfrac{cov(X, Y)}{\sigma_x \sigma_y}=\cfrac{0}{\sqrt{35/144} \sqrt{12/49}}=0$
+
+Of course, we could have stopped when we found that the covariance is zero, since that implies a correlation that is also zero.
+
+Note that we used fractions here to be accurate. If we had instead used decimal numbers, we would have needed to do some rounding along the way and the result would not have been exactly zero.
