@@ -1,5 +1,5 @@
 ---
-title: "The correlation of uncorrelated variables"
+title: "How to calculate correlation when you know the distribution"
 output:
   html_document:
     df_print: paged
@@ -16,13 +16,13 @@ so to get the correlation you need to calculate the covariance between the varia
 
 The formula to calculate the covariance and the variances depends on what type of information you have. If you have a sample of observations you may use formulas like these:
 
-$cov(X, Y)=\sum_{i=1}^n(x_i-\bar{x})(y_i-\bar{y})$
+$cov(X, Y)=\frac{1}{n-1}\sum_{i=1}^n(x_i-\bar{x})(y_i-\bar{y})$
 
-$Var(X)=\sum_{i=1}^n(x_i-\bar{x})^2$
+$Var(X)=\frac{1}{n-1}\sum_{i=1}^n(x_i-\bar{x})^2$
 
-$Var(Y)=\sum_{i=1}^n(y_i-\bar{y})^2$
+$Var(Y)=\frac{1}{n-1}\sum_{i=1}^n(y_i-\bar{y})^2$
 
-However, in this case we don't have observations of $X$ and $Y$. Instead we have their theoretical distributions, which means that we know the probabilities that the variables take certain values. When we know the distribution of the variables, we use these formulas to calculate the theoretical correlation:
+However, in this case we don't have observations of $X$ and $Y$. Instead we have their theoretical distributions, which means that we know the probabilities that the variables take certain values. When we know the distribution of the variables, we use the following formulas to calculate the theoretical covariance and variances:
 
 $cov(X, Y)=E[XY] - E[X]E[Y]$
 
@@ -48,7 +48,7 @@ For $Y$ we do the same.
 
 $E[Y]=\cfrac{3}{7}\cdot 0 + \cfrac{4}{7}\cdot 1 = \cfrac{4}{7}$
 
-To get $E[X^2]$ you just replace the values of $X$ with the value of $X^2$ for each probability. In this case where $X$ and $Y$ can only be 0 or 1, we get that $X^2=0$ when $X=0$, and  $X^2=1$ when $X=1$. Same for $Y^2$ and $Y$. Therefore,
+To get $E[X^2]$ you just replace the values of $X$ with the value of $X^2$ for each probability. In this case where $X$ and $Y$ can only be 0 or 1, we get that $X^2=0$ when $X=0$, and $X^2=1$ when $X=1$. Same for $Y^2$ and $Y$. Therefore,
 
 $E[X^2]=E[X]= \cfrac{7}{12}$
 
@@ -74,10 +74,10 @@ $Var(Y)=E[Y^2] - E[Y]^2=\cfrac{4}{7} - (\cfrac{4}{7})^2=\cfrac{12}{49}$
 
 ### Putting it all together
 
-We return to the original formula for the correlation:
+We return to the original formula for the correlation. Remember that $\sigma_x$ is the square root of the variance of $X$.
 
 $corr(X, Y) = \cfrac{cov(X, Y)}{\sigma_x \sigma_y}=\cfrac{0}{\sqrt{35/144} \sqrt{12/49}}=0$
 
 Of course, we could have stopped when we found that the covariance is zero, since that implies a correlation that is also zero.
 
-Note that we used fractions here to be accurate. If we had instead used decimal numbers, we would have needed to do some rounding along the way and the result would not have been exactly zero.
+Note that we used fractions here to be accurate. If we had instead used decimal numbers, we would have needed to do some rounding along the way, and the result would not have been exactly zero.
