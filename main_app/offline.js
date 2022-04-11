@@ -1,13 +1,11 @@
 ﻿{
-	"version": 1649691183,
+	"version": 1649693003,
 	"fileList": [
 		"data.js",
 		"c2runtime.js",
 		"jquery-3.4.1.min.js",
 		"offlineClient.js",
 		"images/grid_tile-sheet0.png",
-		"images/plus_minus-sheet0.png",
-		"images/plus_minus-sheet1.png",
 		"images/professor-sheet0.png",
 		"images/professor-sheet1.png",
 		"images/professor-sheet2.png",
@@ -18,6 +16,7 @@
 		"images/grid_tile2-sheet0.png",
 		"images/pleaseexplain-sheet0.png",
 		"images/chili-sheet0.png",
+		"images/exitproblem-sheet0.png",
 		"icon-16.png",
 		"icon-32.png",
 		"icon-114.png",
