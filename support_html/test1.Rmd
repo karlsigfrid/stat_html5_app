@@ -1,0 +1,13 @@
+---
+title: "Learn more about probabilities and stuff"
+output:
+  html_document:
+    df_print: paged
+---
+
+LEarn about probabilities with this gnarly plot.
+
+```{r}
+plot(cars)
+```
+
